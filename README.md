@@ -9,89 +9,89 @@
 <h1 align="center">📐 Tutor de Matemática<br><sub>Math Tutor — Local AI for Public Exam Preparation</sub></h1>
 
 <p align="center">
-  <strong>🇧🇷 Português</strong> &nbsp;|&nbsp; <a href="#english">🇺🇸 English</a>
+  <strong>🇺🇸 English</strong> &nbsp;|&nbsp; <a href="#portugues">🇧🇷 Português</a>
 </p>
 
 <hr>
 
-<h2 id="portugues">🇧🇷 Português</h2>
+<h2 id="english">🇺🇸 English</h2>
 
-### 📖 Sobre o Projeto
+### 📖 About
 
-O **Tutor de Matemática** é uma aplicação web que utiliza **inteligência artificial 100% local** (via [Ollama](https://ollama.com)) para ensinar matemática de forma didática a candidatos de concursos públicos.
+**Math Tutor** is a web application that uses **100% local artificial intelligence** (via [Ollama](https://ollama.com)) to teach math in a didactic way to public exam candidates.
 
-A proposta é simples: adaptar modelos de IA de poucos parâmetros — como o **LFM 2.5 (8B)** — para um contexto educacional real, mostrando que é possível ter um tutor particular de qualidade rodando inteiramente no seu computador, sem depender de APIs pagas ou internet.
+The core idea: adapt small-parameter AI models — such as **LFM 2.5 (8B)** — for real educational contexts, proving that a high-quality private tutor can run entirely on your own computer, without paid APIs or internet dependency.
 
-O tutor foi originalmente configurado com o edital do **Concurso Público da Câmara Municipal de São Domingos do Capim (Edital 001/2026)**, mas pode ser adaptado para qualquer edital com facilidade — basta substituir o arquivo `public/pdf_content.txt` pelo conteúdo programático desejado.
+The tutor was originally configured with the exam syllabus for the **São Domingos do Capim City Council Public Exam (Notice 001/2026)**, but can be easily adapted to any syllabus — just replace the `public/pdf_content.txt` file with your desired program content.
 
-### ✨ Funcionalidades
+### ✨ Features
 
-- ⚡ **IA 100% local** — sem internet, sem custos, sem limites de requisição
-- 📚 **Contextualizado no edital** — o tutor conhece o conteúdo programático do concurso
-- 💬 **Streaming em tempo real** — respostas aparecem letra por letra, com o raciocínio do modelo visível
-- 🧮 **Suporte a LaTeX** — fórmulas matemáticas renderizadas com KaTeX (ex: $$A = \\pi r^2$$)
-- 🎨 **Interface moderna** — dark theme, responsivo, com suporte a markdown (tabelas, listas, código)
-- 🧠 **Thinking visível** — o raciocínio do modelo aparece antes da resposta final
+- ⚡ **100% local AI** — no internet, no costs, no request limits
+- 📚 **Syllabus-aware** — the tutor knows the exam's program content
+- 💬 **Real-time streaming** — responses appear token by token, with the model's reasoning visible
+- 🧮 **LaTeX support** — math formulas rendered with KaTeX (e.g. $$A = \pi r^2$$)
+- 🎨 **Modern UI** — dark theme, responsive, markdown support (tables, lists, code)
+- 🧠 **Visible thinking** — the model's reasoning appears before the final answer
 
 ### 🛠️ Stack
 
-| Camada | Tecnologia |
+| Layer | Technology |
 |---|---|
 | Frontend | React 19 + Vite 8 + CSS Modules |
-| Backend | Express 5 (proxy API) |
-| IA | Ollama + LFM 2.5 (8B, Q4_K_M) |
-| Renderização | KaTeX (LaTeX) + React-Markdown |
-| Tunnel (opcional) | Cloudflare Tunnel (`cloudflared`) |
+| Backend | Express 5 (API proxy) |
+| AI | Ollama + LFM 2.5 (8B, Q4_K_M) |
+| Rendering | KaTeX (LaTeX) + React-Markdown |
+| Tunnel (optional) | Cloudflare Tunnel (`cloudflared`) |
 
-### 📦 Instalação (1 comando)
+### 📦 Installation (1 command)
 
 ```bash
 git clone https://github.com/josenavegantes/tutor-matematica.git
 cd tutor-matematica
 python3 setup.py
 
-# (Opcional) Iniciar também o túnel Cloudflare
+# (Optional) Also start a Cloudflare tunnel
 python3 setup.py --cloudflared
 ```
 
-**Pré-requisitos:** Python 3.8+, ~8 GB RAM livre, ~15 GB de disco.
+**Prerequisites:** Python 3.8+, ~8 GB free RAM, ~15 GB free disk.
 
-O script `setup.py` cuida de:
-1. Instalar/atualizar Node.js (v22+)
-2. Instalar dependências npm
-3. Buildar o frontend (Vite)
-4. Instalar Ollama (se necessário)
-5. Baixar o modelo LFM 2.5 (~5.2 GB)
-6. Criar o modelo customizado `tutor-matematica`
-7. Iniciar o servidor em `http://localhost:5173`
+The `setup.py` script handles:
+1. Install/update Node.js (v22+)
+2. Install npm dependencies
+3. Build frontend (Vite)
+4. Install Ollama (if needed)
+5. Download the LFM 2.5 model (~5.2 GB)
+6. Create the custom `tutor-matematica` model
+7. Start the server at `http://localhost:5173`
 
-### 🚀 Uso
+### 🚀 Usage
 
-1. Abra `http://localhost:5173`
-2. O tutor te recebe com uma mensagem de boas-vindas
-3. Pergunte qualquer coisa sobre os tópicos de matemática do edital
-4. O tutor responde passo a passo, com exemplos práticos e exercícios ao final
+1. Open `http://localhost:5173`
+2. The tutor greets you with a welcome message
+3. Ask anything about the exam's math topics
+4. The tutor responds step by step, with practical examples and exercises at the end
 
-### 👥 Autores
+### 👥 Authors
 
 <p>
-  <strong>José Navegantes Junior</strong> e <strong>Dayane Barros</strong><br>
-  <em>Belém — Pará — Brasil 🇧🇷</em>
+  <strong>José Navegantes Junior</strong> and <strong>Dayane Barros</strong><br>
+  <em>Belém — Pará — Brazil 🇧🇷</em>
 </p>
 
-**José Navegantes Junior** é ex-servidor estadual, aprovado em 3 concursos públicos. Apesar de sua formação ser na área jurídica, desde pequeno sempre teve forte interesse pela computação. Percebeu que programação era um excelente meio de estudar e potencializar o aprendizado — e foi assim que nasceu a ideia de unir IA local com preparação para concursos.
+**José Navegantes Junior** is a former state employee, approved in 3 public exams. Although his academic background is in law, he has had a strong interest in computing since childhood. He realized that programming was an excellent way to study and enhance learning — and that is how the idea of combining local AI with exam preparation was born.
 
-**Dayane Barros** é estudante de Análise de Sistemas e compartilha com José o entusiasmo por programação e inteligência artificial. Juntos, publicam este código com o objetivo de auxiliar professores, concurseiros e qualquer pessoa que deseje estudar matemática de forma mais eficiente com o apoio de IA local e gratuita.
+**Dayane Barros** is a Systems Analysis student who shares José's enthusiasm for programming and artificial intelligence. Together, they publish this code with the goal of helping teachers, exam candidates, and anyone who wants to study math more efficiently with the support of local, free AI.
 
-### 📄 Licença
+### 📄 License
 
-MIT — sinta-se livre para usar, modificar e compartilhar.
+MIT — feel free to use, modify, and share.
 
 ---
 
 <hr>
 
-# 📐 Tutor de Matemática — Concurso Público CMSDC 2026
+<h1 align="center">📐 Tutor de Matemática — Concurso Público CMSDC 2026</h1>
 
 Chatbot educacional de matemática focado no **Concurso Público da Câmara Municipal de São Domingos do Capim (Edital 001/2026)**. O tutor usa IA local via [Ollama](https://ollama.com) para ensinar matemática de forma didática, paciente e prática, com exemplos do dia a dia administrativo.
 
@@ -193,83 +193,79 @@ tutor-mat-app/
 └── package.json
 ```
 
-### 📄 Licença
-
-MIT — sinta-se livre para usar, modificar e compartilhar.
-
 ---
 
 <hr>
 
-<h2 id="english">🇺🇸 English</h2>
+<h2 id="portugues">🇧🇷 Português</h2>
 
-### 📖 About
+### 📖 Sobre o Projeto
 
-**Math Tutor** is a web application that uses **100% local artificial intelligence** (via [Ollama](https://ollama.com)) to teach math in a didactic way to public exam candidates.
+O **Tutor de Matemática** é uma aplicação web que utiliza **inteligência artificial 100% local** (via [Ollama](https://ollama.com)) para ensinar matemática de forma didática a candidatos de concursos públicos.
 
-The core idea: adapt small-parameter AI models — such as **LFM 2.5 (8B)** — for real educational contexts, proving that a high-quality private tutor can run entirely on your own computer, without paid APIs or internet dependency.
+A proposta é simples: adaptar modelos de IA de poucos parâmetros — como o **LFM 2.5 (8B)** — para um contexto educacional real, mostrando que é possível ter um tutor particular de qualidade rodando inteiramente no seu computador, sem depender de APIs pagas ou internet.
 
-The tutor was originally configured with the exam syllabus for the **São Domingos do Capim City Council Public Exam (Notice 001/2026)**, but can be easily adapted to any syllabus — just replace the `public/pdf_content.txt` file with your desired program content.
+O tutor foi originalmente configurado com o edital do **Concurso Público da Câmara Municipal de São Domingos do Capim (Edital 001/2026)**, mas pode ser adaptado para qualquer edital com facilidade — basta substituir o arquivo `public/pdf_content.txt` pelo conteúdo programático desejado.
 
-### ✨ Features
+### ✨ Funcionalidades
 
-- ⚡ **100% local AI** — no internet, no costs, no request limits
-- 📚 **Syllabus-aware** — the tutor knows the exam's program content
-- 💬 **Real-time streaming** — responses appear token by token, with the model's reasoning visible
-- 🧮 **LaTeX support** — math formulas rendered with KaTeX (e.g. $$A = \\pi r^2$$)
-- 🎨 **Modern UI** — dark theme, responsive, markdown support (tables, lists, code)
-- 🧠 **Visible thinking** — the model's reasoning appears before the final answer
+- ⚡ **IA 100% local** — sem internet, sem custos, sem limites de requisição
+- 📚 **Contextualizado no edital** — o tutor conhece o conteúdo programático do concurso
+- 💬 **Streaming em tempo real** — respostas aparecem letra por letra, com o raciocínio do modelo visível
+- 🧮 **Suporte a LaTeX** — fórmulas matemáticas renderizadas com KaTeX (ex: $$A = \pi r^2$$)
+- 🎨 **Interface moderna** — dark theme, responsivo, com suporte a markdown (tabelas, listas, código)
+- 🧠 **Thinking visível** — o raciocínio do modelo aparece antes da resposta final
 
 ### 🛠️ Stack
 
-| Layer | Technology |
+| Camada | Tecnologia |
 |---|---|
 | Frontend | React 19 + Vite 8 + CSS Modules |
-| Backend | Express 5 (API proxy) |
-| AI | Ollama + LFM 2.5 (8B, Q4_K_M) |
-| Rendering | KaTeX (LaTeX) + React-Markdown |
-| Tunnel (optional) | Cloudflare Tunnel (`cloudflared`) |
+| Backend | Express 5 (proxy API) |
+| IA | Ollama + LFM 2.5 (8B, Q4_K_M) |
+| Renderização | KaTeX (LaTeX) + React-Markdown |
+| Tunnel (opcional) | Cloudflare Tunnel (`cloudflared`) |
 
-### 📦 Installation (1 command)
+### 📦 Instalação (1 comando)
 
 ```bash
 git clone https://github.com/josenavegantes/tutor-matematica.git
 cd tutor-matematica
 python3 setup.py
 
-# (Optional) Also start a Cloudflare tunnel
+# (Opcional) Iniciar também o túnel Cloudflare
 python3 setup.py --cloudflared
 ```
 
-**Prerequisites:** Python 3.8+, ~8 GB free RAM, ~15 GB free disk.
+**Pré-requisitos:** Python 3.8+, ~8 GB RAM livre, ~15 GB de disco.
 
-The `setup.py` script handles:
-1. Install/update Node.js (v22+)
-2. Install npm dependencies
-3. Build frontend (Vite)
-4. Install Ollama (if needed)
-5. Download the LFM 2.5 model (~5.2 GB)
-6. Create the custom `tutor-matematica` model
-7. Start the server at `http://localhost:5173`
+O script `setup.py` cuida de:
+1. Instalar/atualizar Node.js (v22+)
+2. Instalar dependências npm
+3. Buildar o frontend (Vite)
+4. Instalar Ollama (se necessário)
+5. Baixar o modelo LFM 2.5 (~5.2 GB)
+6. Criar o modelo customizado `tutor-matematica`
+7. Iniciar o servidor em `http://localhost:5173`
 
-### 🚀 Usage
+### 🚀 Uso
 
-1. Open `http://localhost:5173`
-2. The tutor greets you with a welcome message
-3. Ask anything about the exam's math topics
-4. The tutor responds step by step, with practical examples and exercises at the end
+1. Abra `http://localhost:5173`
+2. O tutor te recebe com uma mensagem de boas-vindas
+3. Pergunte qualquer coisa sobre os tópicos de matemática do edital
+4. O tutor responde passo a passo, com exemplos práticos e exercícios ao final
 
-### 👥 Authors
+### 👥 Autores
 
 <p>
-  <strong>José Navegantes Junior</strong> and <strong>Dayane Barros</strong><br>
-  <em>Belém — Pará — Brazil 🇧🇷</em>
+  <strong>José Navegantes Junior</strong> e <strong>Dayane Barros</strong><br>
+  <em>Belém — Pará — Brasil 🇧🇷</em>
 </p>
 
-**José Navegantes Junior** is a former state employee, approved in 3 public exams. Although his academic background is in law, he has had a strong interest in computing since childhood. He realized that programming was an excellent way to study and enhance learning — and that is how the idea of combining local AI with exam preparation was born.
+**José Navegantes Junior** é ex-servidor estadual, aprovado em 3 concursos públicos. Apesar de sua formação ser na área jurídica, desde pequeno sempre teve forte interesse pela computação. Percebeu que programação era um excelente meio de estudar e potencializar o aprendizado — e foi assim que nasceu a ideia de unir IA local com preparação para concursos.
 
-**Dayane Barros** is a Systems Analysis student who shares José's enthusiasm for programming and artificial intelligence. Together, they publish this code with the goal of helping teachers, exam candidates, and anyone who wants to study math more efficiently with the support of local, free AI.
+**Dayane Barros** é estudante de Análise de Sistemas e compartilha com José o entusiasmo por programação e inteligência artificial. Juntos, publicam este código com o objetivo de auxiliar professores, concurseiros e qualquer pessoa que deseje estudar matemática de forma mais eficiente com o apoio de IA local e gratuita.
 
-### 📄 License
+### 📄 Licença
 
-MIT — feel free to use, modify, and share.
+MIT — sinta-se livre para usar, modificar e compartilhar.
